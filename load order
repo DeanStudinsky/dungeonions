@@ -1,0 +1,7 @@
+📦 Load Order (Critical)
+1. TileConfig.js
+2. GameConfig.js
+3. [Entities] → Player.js, Enemy.js, Projectile.js
+4. [Managers] → MapManager.js, WaveManager.js, ScoreManager.js
+5. [Scenes] → BootScene.js, TitleScene.js, MenuScene.js, GameScene.js, UIScene.js
+6. main.js (bootstrap last) 

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="theme-color" content="#000000">
+
+    <title>Dangerous Dungeonions</title>
+    <link rel="manifest" href="manifest.json">
+    <link rel="apple-touch-icon" href="assets/icon-192.png">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+            -webkit-touch-callout: none;
+            -webkit-user-select: none;
+            user-select: none;
+        }
+
+        html, body {
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            background: #000;
+            position: fixed;
+            overscroll-behavior: none;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #game-container {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        canvas {
+            display: block;
+            touch-action: none;
+        }
+
+        /* Loading screen */
+        #loading {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+            font-family: monospace;
+            font-size: 24px;
+            z-index: 1000;
+            transition: opacity 0.5s;
+        }
+
+        #loading.hidden {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        /* Mobile controls - positioned over canvas */
+        .mobile-controls {
+            position: fixed;
+            bottom: 20px;
+            z-index: 100;
+            display: none;
+            pointer-events: none;
+        }
+
+        .mobile-controls.active {
+            display: block;
+        }
+
+        .joystick-container {
+            left: 20px;
+            bottom: 20px;
+            width: 120px;
+            height: 120px;
+        }
+
+        .fire-button {
+            right: 20px;
+            bottom: 20px;
+            width: 80px;
+            height: 80px;
+        }
+
+        /* Show controls on touch devices */
+        @media (hover: none) and (pointer: coarse) {
+            .mobile-controls {
+                display: block;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="loading">Loading Dangerous Dungeonions...</div>
+    <div id="game-container"></div>
+
+    <!-- Phaser 3 -->
+    <script src="https://cdn.jsdelivr.net/npm/phaser@3.70.0/dist/phaser.min.js"></script>
+
+    <!-- Config -->
+    <script src="src/config/PlayerClassConfig.js"></script>
+    <script src="src/config/TileConfig.js"></script>
+    <script src="src/config/RoguelikeTileConfig.js"></script>
+    <script src="src/config/TinyCreaturesTileConfig.js"></script>
+    <script src="src/config/DungeOniontilelogic.js"></script>
+    <script src="src/config/GameConfig.js"></script>
+
+    <!-- Entities -->
+    <script src="src/entities/BasePlayer.js"></script>
+    <script src="src/entities/Wizard.js"></script>
+    <script src="src/entities/Archer.js"></script>
+    <script src="src/entities/Paladin.js"></script>
+    <script src="src/entities/Knight.js"></script>
+    <script src="src/entities/Enemy.js"></script>
+    <script src="src/entities/Projectile.js"></script>
+
+    <!-- Managers -->
+    <script src="src/managers/ProgressionManager.js"></script>
+    <script src="src/managers/MapManager.js"></script>
+    <script src="src/managers/WaveManager.js"></script>
+    <script src="src/managers/ScoreManager.js"></script>
+
+    <!-- Scenes -->
+    <script src="src/scenes/BootScene.js"></script>
+    <script src="src/scenes/MenuScene.js"></script>
+    <script src="src/scenes/MapEditorScene.js"></script>
+    <script src="src/scenes/GameScene.js"></script>
+    <script src="src/scenes/UIScene.js"></script>
+    <script src="src/scenes/PauseScene.js"></script>
+
+    <!-- Main -->
+    <script src="src/main.js"></script>
+</body>
+</html>

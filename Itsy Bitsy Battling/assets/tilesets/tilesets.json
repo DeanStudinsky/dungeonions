@@ -1,0 +1,26 @@
+﻿[
+  {
+    "id": "kenney_tiny_dungeon",
+    "name": "Kenney Tiny Dungeon",
+    "path": "./assets/tilesets/kenney_tiny-dungeon/tilemap.png",
+    "tileSize": 16,
+    "spacing": 1,
+    "margin": 0
+  },
+  {
+    "id": "kenney_tiny_town",
+    "name": "Kenney Tiny Town",
+    "path": "./assets/tilesets/kenney_tiny-town/tilemap.png",
+    "tileSize": 16,
+    "spacing": 1,
+    "margin": 0
+  },
+  {
+    "id": "kenney_roguelike_rpg",
+    "name": "Kenney Roguelike RPG",
+    "path": "./assets/tilesets/kenney_roguelike-rpg-pack/roguelikeSheet_transparent.png",
+    "tileSize": 16,
+    "spacing": 1,
+    "margin": 1
+  }
+]

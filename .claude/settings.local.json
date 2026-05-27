@@ -1,0 +1,17 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(ls:*)",
+      "Bash(dir:*)",
+      "Bash(identify:*)",
+      "Bash(npx http-server -p 8080)",
+      "Bash(npm run dev:*)",
+      "Bash(timeout:*)",
+      "Bash(npx http-server:*)",
+      "Bash(cat:*)",
+      "Bash(curl:*)",
+      "Bash(claude doctor)",
+      "Bash(firebase deploy:*)"
+    ]
+  }
+}

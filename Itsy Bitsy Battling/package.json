@@ -1,0 +1,14 @@
+﻿{
+  "name": "itsy-bitsy-bbattlinf",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "build": "node ./scripts/sync-public.mjs",
+    "generate-tiles": "node ./scripts/generate-tileset-mapping.js",
+    "deploy": "npm run build && firebase deploy --only hosting",
+    "dev": "live-server src --port=3000 --no-browser"
+  },
+  "engines": {
+    "node": ">=16"
+  }
+}
