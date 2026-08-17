@@ -4,27 +4,32 @@ A roguelike dungeon crawler built with Phaser 3, featuring procedural generation
 
 ## Project Structure
 
+Everything is served straight from the repository root — no build step.
+
 ```
-Itsy Bitsy Battling/
-├── public/                    # All game files (served by Firebase Hosting)
-│   ├── src/                   # Game source code
-│   │   ├── scenes/           # Phaser scenes (Boot, Menu, Game, UI, MapEditor)
-│   │   ├── managers/         # Game systems (MapManager, EnemyManager)
-│   │   ├── entities/         # Game objects (Player, enemies, projectiles)
-│   │   └── config/           # Configuration files (TileConfig, GameConfig)
-│   ├── assets/               # Game assets
-│   │   ├── tilesets/        # Kenney Tiny Dungeon & Roguelike tilesets
-│   │   ├── ground-tiles/    # Custom 16x16 ground tile PNGs
-│   │   └── audio/           # Sound effects
-│   ├── libs/                 # Third-party libraries (Phaser 3)
-│   ├── index.html           # Main entry point
-│   └── sw.js                # Service worker (disabled during development)
-├── backup/                   # Old p5.js version files (archived)
-├── .docs/                    # Documentation
-├── .reference/               # Reference materials
+.
+├── index.html               # Main entry point (loads Phaser from CDN)
+├── src/                     # Game source code
+│   ├── scenes/             # Phaser scenes (Boot, Menu, Game, UI, MapEditor, Pause)
+│   ├── managers/           # Game systems (Map, Wave, Score, Progression)
+│   ├── entities/           # Game objects (players, enemies, projectiles)
+│   └── config/             # Configuration files (TileConfig, GameConfig, ...)
+├── assets/                  # Game assets
+│   ├── tilesets/           # Kenney Tiny Dungeon & Roguelike tilesets
+│   ├── ground-tiles/       # Custom 16x16 ground tile PNGs
+│   ├── ui/                 # Interface art
+│   └── audio/              # Sound effects
+├── sw.js                    # Service worker (registration currently disabled)
+├── manifest.json            # PWA manifest
 ├── firebase.json            # Firebase Hosting configuration
-└── .firebaserc              # Firebase project configuration
+├── .firebaserc              # Firebase project configuration
+└── .nojekyll                # Stops GitHub Pages running Jekyll over the assets
 ```
+
+## Play
+
+- **GitHub Pages**: https://deanstudinsky.github.io/dungeonions/
+- **Locally**: `npx http-server . -p 8080`
 
 ## Features
 

@@ -1,23 +1,25 @@
 // Service Worker for PWA support
-const CACHE_NAME = 'dungeonions-v1.0.0';
+const CACHE_NAME = 'dungeonions-v1.0.1';
+// Paths are relative to the service worker's own URL so the app works both at a
+// host root (Firebase) and under a subpath (GitHub Pages: /dungeonions/).
 const urlsToCache = [
-  '/',
-  '/index.html',
-  '/src/main.js',
-  '/src/config/GameConfig.js',
-  '/src/config/TileConfig.js',
-  '/src/entities/Player.js',
-  '/src/entities/Enemy.js',
-  '/src/entities/Projectile.js',
-  '/src/managers/MapManager.js',
-  '/src/managers/WaveManager.js',
-  '/src/managers/ScoreManager.js',
-  '/src/scenes/BootScene.js',
-  '/src/scenes/MenuScene.js',
-  '/src/scenes/GameScene.js',
-  '/src/scenes/UIScene.js',
-  '/manifest.json',
-  '/assets/tilemap.png',
+  './',
+  './index.html',
+  './src/main.js',
+  './src/config/GameConfig.js',
+  './src/config/TileConfig.js',
+  './src/entities/Player.js',
+  './src/entities/Enemy.js',
+  './src/entities/Projectile.js',
+  './src/managers/MapManager.js',
+  './src/managers/WaveManager.js',
+  './src/managers/ScoreManager.js',
+  './src/scenes/BootScene.js',
+  './src/scenes/MenuScene.js',
+  './src/scenes/GameScene.js',
+  './src/scenes/UIScene.js',
+  './manifest.json',
+  './assets/tilemap.png',
   'https://cdn.jsdelivr.net/npm/phaser@3.70.0/dist/phaser.min.js'
 ];
 
@@ -81,7 +83,7 @@ self.addEventListener('fetch', (event) => {
           return response;
         }).catch(() => {
           // If both cache and network fail, show offline page
-          return caches.match('/index.html');
+          return caches.match('./index.html');
         });
       })
   );

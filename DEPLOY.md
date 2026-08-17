@@ -26,7 +26,6 @@ Your new Phaser 3 game is now set up for Firebase deployment!
 
 ### 1. Test Locally First
 ```bash
-cd "Itsy Bitsy Battling"
 firebase serve
 ```
 

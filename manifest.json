@@ -2,12 +2,12 @@
   "name": "Dangerous Dungeonions",
   "short_name": "Dungeonions",
   "description": "A fast-paced dungeon survival game with 4 unique character classes",
-  "start_url": "/",
+  "start_url": "./",
   "display": "fullscreen",
   "orientation": "any",
   "theme_color": "#000000",
   "background_color": "#000000",
-  "scope": "/",
+  "scope": "./",
   "icons": [
     {
       "src": "assets/icon-192.png",
@@ -29,7 +29,7 @@
       "name": "Play Game",
       "short_name": "Play",
       "description": "Start a new game",
-      "url": "/",
+      "url": "./",
       "icons": [{ "src": "assets/icon-192.png", "sizes": "192x192" }]
     }
   ]
